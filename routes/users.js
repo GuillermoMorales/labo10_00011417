@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 //Requerimos el controlador que hemos creado
-const AuthController =require("../controllers/UserController");
+const AuthController =require("../controllers/usercontroller");
 //Requerimos el Middelware que hemos creado
 const AuthMiddleware = require("../middlewares/AuthMiddleware")
 //Requerimos el modelo

@@ -10,14 +10,14 @@ const session = require('express-session');
 //Almacenar la sesion en nuestra base de datos
 const MongoStore = require('connect-mongo')(session);
 //Credenciales de nuestra base de datos
-const {mongodb}=require('./configs/keys');
+const {mongodb}=require('.config/keys');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('.routes/index');
+var usersRouter = require('.routes/users');
 
 var app = express();
 /*Conexion con mongodb*/
-require('./configs/database');
+require('.configs/database');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
