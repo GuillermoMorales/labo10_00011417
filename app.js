@@ -10,14 +10,14 @@ const session = require('express-session');
 //Almacenar la sesion en nuestra base de datos
 const MongoStore = require('connect-mongo')(session);
 //Credenciales de nuestra base de datos
-const {mongodb}=require('.config/keys');
+const {mongodb}=require('./configs/key');
 
-var indexRouter = require('.routes/index');
-var usersRouter = require('.routes/users');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
 var app = express();
 /*Conexion con mongodb*/
-require('.configs/database');
+require('./configs/database');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -52,7 +52,7 @@ next();
 //routes
 app.use('/', indexRouter); // ruta para el index
 app.use('/users', usersRouter); // rutas para los usuarios
-
+/*
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 next(createError(404));
@@ -68,5 +68,5 @@ res.locals.error = req.app.get('env') === 'development' ? err : {};
 res.status(err.status || 500);
 res.render('error');
 });
-
+*/
 module.exports = app;
